@@ -1,11 +1,17 @@
 console.log("Starting of Day");
 
-function carMaintenance(){
+function carMaintenance(key){
     
     let promise = new Promise(function(resolve, reject){
         setTimeout(()=>{
-            console.log("Car is ready");
+            if(key){
+                console.log("Car is ready");
             resolve("Come take your car");
+            }
+            else{
+                reject("Key is not match")
+            }
+            
         },2000);
     })
    return promise;
@@ -26,7 +32,7 @@ function EndOfTheDay(){
    return promise;
 }
 
-let workDone = carMaintenance();
+let workDone = carMaintenance(false);
 
 workDone.then(function(value){
     console.log(value)
@@ -36,3 +42,7 @@ workDone.then(function(value){
    return EndOfTheDay();
 }).then(function(value){
     console.log(value);})
+    .catch(function(value){
+        console.log(value)
+    })
+    
