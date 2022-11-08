@@ -30,12 +30,7 @@ function shopingForWinter(){
 
 console.log("Handover the car to mechanic")
 
-carMaintenance(function(value){
-    console.log(value+" I'll get my car back");
-    goForGrocery("Go for Grocery");
-  });
-
-
+carMaintenance(carCallback);
 
 shopingForWinter();
 
